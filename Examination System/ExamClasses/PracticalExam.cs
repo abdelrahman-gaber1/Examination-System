@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Examination_System.Question;
 
-namespace Examination_System
+namespace Examination_System.ExamClasses
 {
     internal class PracticalExam : Exam
     {

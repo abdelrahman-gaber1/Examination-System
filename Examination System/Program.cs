@@ -1,4 +1,7 @@
-﻿namespace Examination_System
+﻿
+using Examination_System.ExamClasses;
+
+namespace Examination_System
 {
     internal class Program
     {
@@ -139,7 +142,7 @@
                     for (int j = 0; j < final.QTypeTwo.Length; j++)
                     {
                         Console.WriteLine(final.QTypeTwo[j].ToString());
-                        Console.WriteLine("Please Enter The Answer Id (1 For True | 2 For False");
+                        Console.WriteLine("Please Enter The Answer Id (1 For True | 2 For False)");
                         int.TryParse(Console.ReadLine(), out int answer);
                         AnswersEnterTrue[j] = answer - 1;
                         if (answer == final.QTypeTwo[j].RightAnswer)

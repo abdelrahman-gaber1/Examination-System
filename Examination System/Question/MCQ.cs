@@ -5,7 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Examination_System
+namespace Examination_System.Question
 {
     internal class MCQ : Question
     {
@@ -19,7 +19,7 @@ namespace Examination_System
         }
         public override string ToString()
         {
-            var ansewer = String.Join("\n", AnswerList.Select(answerList => answerList.ToString()));
+            var ansewer = string.Join("\n", AnswerList.Select(answerList => answerList.ToString()));
             return $"{Header}    Mark{mark}\n" +
                 $"{Body} \n" +
                 $"{ansewer}\n";

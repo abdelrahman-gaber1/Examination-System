@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Numerics;
 using System.Text;
 using System.Threading.Tasks;
 using Examination_System.Question;
@@ -23,6 +24,40 @@ namespace Examination_System.ExamClasses
             {
                 QTypeTwo[i] = new TrueFalse();
             }
+        }
+        public void ShowAllAnswersMCQ(ref int totalGrade,MCQ[] exam, int[] UserAnswers)
+        {
+            int j = 0;
+            foreach (MCQ mCQ in exam) 
+            {
+                totalGrade += mCQ.ShowAnswer(mCQ ,j, UserAnswers);  
+                j++;
+            }
+        }
+        public void ShowAllAnswersTrueFalse(ref int totalGrade , TrueFalse[] exam, int[] UserAnswers)
+        {
+            int j = 0;
+            foreach (TrueFalse TrueFalse in exam)
+            {
+                totalGrade += TrueFalse.ShowAnswer(TrueFalse, j, UserAnswers);
+                j++;
+            }
+        }
+        public static void AddQuestionM(MCQ exam , int type)
+        {
+            exam.AddQuestion(exam, type );
+        }
+        public static void AddQuestionF(TrueFalse exam, int type)
+        {
+            exam.AddQuestion(exam, type);
+        }
+        public static int ShowQustionM(MCQ exam, int sum, ref int AnswersEnterMCQ)
+        {
+            return exam.ShowQuestion(exam, sum, ref AnswersEnterMCQ , 1);
+        }
+        public static int ShowQustionF(TrueFalse exam, int sum, ref int AnswersEnterMCQ)
+        {
+            return exam.ShowQuestion(exam, sum, ref AnswersEnterMCQ , 2);
         }
     }
 }

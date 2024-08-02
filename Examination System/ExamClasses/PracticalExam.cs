@@ -18,5 +18,22 @@ namespace Examination_System.ExamClasses
                 QTypeOne[i] = new MCQ();
             }
         }
+        public void ShowAllAnswersMCQ(ref int totalGrade , MCQ[] exam, int[] UserAnswers)
+        {
+            int j = 0;
+            foreach (MCQ mCQ in exam)
+            {
+                totalGrade += mCQ.ShowAnswer(mCQ, j, UserAnswers);
+                j++;
+            }
+        }
+        public static void AddQuestionF(MCQ exam , int type )
+        {
+            exam.AddQuestion(exam ,type);
+        }
+        public static int ShowQustionF(MCQ exam, int sum ,ref  int AnswersEnterMCQ ) 
+        {
+            return exam.ShowQuestion(exam, sum ,ref AnswersEnterMCQ , 1);
+        }
     }
 }
